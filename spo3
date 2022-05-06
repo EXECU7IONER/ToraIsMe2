@@ -1,1 +1,39 @@
+local junk = game:GetService("Workspace").LevelSections.Start.Coins
+local junk2 = game:GetService("Workspace").LevelSections.Start.ScavangerHunt
+local junk3 = game:GetService("Workspace").LevelSections.Start.JumpingMusicGame.Buttons.TrampolineButton
+local junk4 = game:GetService("Workspace").World.SpotifyIsland.MusicGames.CaveMusicGame["Music Cave"]["Buttons R"].button
 
+
+for i = 1,20 do
+   wait(1.5)
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = junk3.CFrame
+end
+
+for i,v in pairs(junk:GetDescendants()) do
+   if v:IsA("BasePart") then
+       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v,0)
+       wait()
+       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v,1)
+   end
+end
+
+for i,v in pairs(junk2:GetDescendants()) do
+   if v:IsA("BasePart") then
+       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v,0)
+       wait()
+       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v,1)
+   end
+end
+
+junk.DescendantAdded:Connect(function(dec)
+   if dec:IsA("BasePart") then
+       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,dec,0)
+       wait()
+       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,dec,1)
+   end
+end)
+
+for i = 1,20 do
+   wait(1.5)
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = junk4.CFrame
+end
