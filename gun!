@@ -1,0 +1,8 @@
+for i,v in pairs(game:GetService("ReplicatedStorage").Assets.Images.Guns:GetChildren()) do
+local args = {
+    [1] = "SERVER_EQUIP_GUN",
+    [2] = v.Name
+}
+
+game:GetService("ReplicatedStorage").NetworkEvents.RemoteEvent:FireServer(unpack(args))
+end
