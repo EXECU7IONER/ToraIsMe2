@@ -1,0 +1,14 @@
+local uis = game:GetService("UserInputService")
+uis.InputBegan:Connect(function(asd)
+if asd.KeyCode == Enum.KeyCode.E then -- any key here (could be insert or delete whatever u want)
+local args = {
+[1] = "holding"
+}
+game:GetService("Players").LocalPlayer.Character.Act:FireServer(unpack(args))
+local args = {
+[1] = "yeet",
+[2] = 1
+}
+game:GetService("Players").LocalPlayer.Character.Act:FireServer(unpack(args))
+end
+end)
