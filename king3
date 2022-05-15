@@ -1,0 +1,6 @@
+Script : 
+loadstring(game:HttpGet"https://raw.githubusercontent.com/xQuartyx/DonateMe/main/ScriptLoader")()
+
+Key :
+Click "Get Key Link" on UI Script.
+then put it at Browser and follow the steps
