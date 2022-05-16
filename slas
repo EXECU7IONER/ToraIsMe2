@@ -1,0 +1,7 @@
+local util = require(game:GetService("ReplicatedStorage").Modules.PlayerUtil)
+util.getAutoSlicePass = function(p1)
+p1 = p1 or game.Players.LocalPlayer
+local v1 = "Premium"
+local v2 = 0.0000000000001
+return v1, v2
+end
