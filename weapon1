@@ -70,5 +70,10 @@ end)
 end)
 local Section = Tab:NewSection("AUTO COLLECT GEMS/COINS")
 Section:NewButton("Click", ".", function()
-    print("Clicked")
+    while wait() do
+   pcall(function()
+   game:GetService("ReplicatedStorage").RE.ClientDrop:FireServer(workspace.DropFolder.RealGems)
+   game:GetService("ReplicatedStorage").RE.ClientDrop:FireServer(workspace.DropFolder.RealCoins)
+   end)
+end
 end)
