@@ -1,0 +1,74 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Weapon Master Simulator", "DarkTheme")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("WALKSPEED")
+Section:NewButton("Click", ".", function()
+    while wait() do
+   pcall(function()
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+   end)
+end
+end)
+local Section = Tab:NewSection("AUTO HIT")
+Section:NewToggle("ON-OFF", ".", function(state)
+    if state then
+        getgenv().Hit = true
+
+while wait() do
+   if getgenv().Hit == true then
+       game:GetService("ReplicatedStorage").RE.Swing:FireServer(math.huge)
+   end
+end
+    else
+        getgenv().Hit = false
+
+while wait() do
+   if getgenv().Hit == true then
+       game:GetService("ReplicatedStorage").RE.Swing:FireServer(math.huge)
+   end
+end
+    end
+end)
+local Section = Tab:NewSection("AUTO SELL")
+Section:NewToggle("ON-OFF", ".", function(state)
+    if state then
+        getgenv().Sell = true;
+
+spawn(function()
+local playerhead = game.Players.LocalPlayer.Character.Head
+while wait() do
+   if not getgenv().Sell then break end
+for i, v in pairs (game:GetService("Workspace").Pads.Sell:GetDescendants()) do
+   if v.Name == "TouchInterest" and v.Parent then
+   firetouchinterest(playerhead, v.Parent, 0)
+   wait()
+   firetouchinterest(playerhead, v.Parent, 1)
+   break;
+   end
+end
+end
+end)
+    else
+        getgenv().Sell = false;
+
+spawn(function()
+local playerhead = game.Players.LocalPlayer.Character.Head
+while wait() do
+   if not getgenv().Sell then break end
+for i, v in pairs (game:GetService("Workspace").Pads.Sell:GetDescendants()) do
+   if v.Name == "TouchInterest" and v.Parent then
+   firetouchinterest(playerhead, v.Parent, 0)
+   wait()
+   firetouchinterest(playerhead, v.Parent, 1)
+   break;
+   end
+end
+end
+end)
+    end
+end)
+local Section = Tab:NewSection("AUTO COLLECT GEMS/COINS")
+Section:NewButton("Click", ".", function()
+    print("Clicked")
+end)
