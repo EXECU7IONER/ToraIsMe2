@@ -1,0 +1,14 @@
+local trophies = 1000000000000000000
+game:GetService'ReplicatedStorage'.RemoteEvents.BuyEvent:FireServer(game:GetService'Players'.LocalPlayer.leaderstats.Trophies, game:GetService'Players'.LocalPlayer.leaderstats.Trophies.Value)
+game:GetService'ReplicatedStorage'.RemoteEvents.BuyEvent:FireServer(game:GetService'Players'.LocalPlayer.leaderstats.Trophies, -trophies)
+
+for _,val in pairs(game:GetService'Players'.LocalPlayer.Status.Currencies:GetChildren()) do
+game:GetService'ReplicatedStorage'.RemoteEvents.MainFunction:InvokeServer("ChangeValue",{["NewValue"] = 1000000000000000000,["Obj"] = val})
+end
+for _,val1 in pairs(game:GetService'Players'.LocalPlayer.Brawlers:GetChildren()) do
+game:GetService'ReplicatedStorage'.RemoteEvents.MainFunction:InvokeServer("ChangeValue",{["NewValue"] = 11,["Obj"] = val1.Power})
+game:GetService'ReplicatedStorage'.RemoteEvents.MainFunction:InvokeServer("ChangeValue",{["NewValue"] = 35,["Obj"] = val1.Rank})
+end
+for _,gear in pairs(game:GetService'Players'.LocalPlayer.Status.GearTokens:GetChildren()) do
+game:GetService'ReplicatedStorage'.RemoteEvents.MainFunction:InvokeServer("ChangeValue",{["NewValue"] = 1000000000000000000,["Obj"] = gear})
+end
