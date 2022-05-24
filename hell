@@ -1,0 +1,18 @@
+while true do wait(1)
+game:GetService("Workspace").Maps.Obstacles:Destroy()
+end
+
+local player = game.Players.LocalPlayer
+local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/sol"))()
+local win = SolarisLib:New({
+Name = "HR",
+FolderToSave = "HellRun"
+})
+local tab = win:Tab("Main")
+local sec = tab:Section("Misc")
+sec:Button("Delete Obstacles", function()
+SolarisLib:Notification("Deleting All Obstacles", "May take some time")
+while true do wait(1)
+game:GetService("Workspace").Maps.Obstacles:Destroy()
+end
+end)
