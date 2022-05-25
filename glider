@@ -14,4 +14,5 @@ end)
 local Section = Tab:NewSection("RESET")
 Section:NewButton("Click", "ButtonInfo", function()
     game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    game:GetService("ReplicatedStorage").Remotes.PlayerEndedFlight:InvokeServer()
 end)
