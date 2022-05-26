@@ -1,0 +1,20 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Delivery Simulator", "DarkTheme")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("AutoFarm (Restock-Delivery)")
+Section:NewToggle("ON-OFF", "ToggleInfo", function(state)
+    if state then
+         _G.Enabled = true ---Enable script
+_G.Stock = true --Auto restock all racks
+_G.Deliver = true --Auto sell everything
+
+loadstring(game:HttpGet('https://pastebin.com/raw/VkRfdPp1'))()
+    else
+         _G.Enabled = false ---Enable script
+_G.Stock = true --Auto restock all racks
+_G.Deliver = true --Auto sell everything
+
+loadstring(game:HttpGet('https://pastebin.com/raw/VkRfdPp1'))()
+    end
+end)
