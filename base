@@ -2,7 +2,7 @@ Script :
 loadstring(game:HttpGet("https://raw.githubusercontent.com/03koios/Loader/main/Loader.lua"))()
 
 Key :
-HiddenKeys
+NoGirlFriend?
 
 add-on script : HitBox Script
 loadstring(game:HttpGet("https://pastebin.com/raw/8gNaTFgN"))()
