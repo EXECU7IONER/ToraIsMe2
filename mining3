@@ -1,0 +1,12 @@
+--// Settings \\--
+
+getgenv().Chests = {
+   'Legendary';
+   'Epic';
+   'Silver';
+   'Gold';
+}
+
+--// Main \\--
+
+loadstring(game:HttpGet'https://github.com/RunDTM/miningsim2/raw/main/serverhop.lua')()
