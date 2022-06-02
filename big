@@ -1,0 +1,2 @@
+Creator Script : https://discord.gg/bvZHKPVDXG
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Insanxty/pi/main/main", true))()
