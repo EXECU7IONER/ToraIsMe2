@@ -1,0 +1,125 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+ 
+local Window = OrionLib:MakeWindow({Name = "War simulator v1"})
+ 
+local Tab = Window:MakeTab({
+    Name = "Scripts",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+ 
+Tab:AddButton({
+    Name = "Gun Mods",
+    Callback = function()
+        for i, v in pairs(getgc(true)) do
+if type(v) == 'table' then
+if rawget(v, 'mag') and rawget(v, 'recoil') then
+v.mag = 100;
+v.fire_rate = 1600;
+v.fire_mode = "auto";
+v.pellets = 7;
+v.fire_distance = 300;
+v.spread = 1
+v.recoil = function() end
+end
+end
+end
+    end    
+})
+ 
+OrionLib:MakeNotification({
+    Name = "Thanks for using the script",
+    Content = "Made By Guests#2563",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+ 
+Tab:AddButton({
+    Name = "Rejoin the game",
+    Callback = function()
+        local tpservice= game:GetService("TeleportService")
+local plr = game.Players.LocalPlayer
+ 
+tpservice:Teleport(game.PlaceId, plr)
+    end    
+})
+ 
+Tab:AddButton({
+    Name = "Server hop",
+    Callback = function()
+        local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+ 
+module:Teleport(game.PlaceId)
+    end    
+})
+ 
+Tab:AddButton({
+    Name = "Server Finder",
+    Callback = function()
+        loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))();
+    end    
+})
+ 
+Tab:AddButton({
+    Name = "Bot shooter",
+    Callback = function()
+        local function getnearest()
+    local mobs =  {}
+    for i , v in pairs(game.Workspace:GetDescendants()) do
+        if v.Parent.Name == 'Mobs' and v:FindFirstChild("Head") ~= nil and v.Humanoid.Health > 0 then
+            table.insert(mobs,v.Head);
+        end;
+    end;
+    table.sort(mobs,function(a,b)
+        return (game.Players.LocalPlayer.Character.Head.Position-a.Position).magnitude < (game.Players.LocalPlayer.Character.Head.Position-b.Position).magnitude
+    end);
+    return mobs[1]
+end;
+local mt =getrawmetatable(game);
+setreadonly(mt,false);
+local nc = mt.__namecall;
+key = 0;
+local oldkey = key;
+ 
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local mouse = LocalPlayer:GetMouse()
+local Camera = workspace.CurrentCamera
+local Debris = game:GetService("Debris")
+local UserInputService = game:GetService("UserInputService")
+local target = false
+local RunService = game:GetService("RunService")
+ 
+ 
+ 
+local fovCircle = true;
+local st = tonumber(tick());
+warn("Loading script...")
+ 
+local meta = getrawmetatable(game)
+setreadonly(meta, false)
+local oldNamecall = meta.__namecall
+meta.__namecall = newcclosure(function(...)
+local method = getnamecallmethod()
+local args = {...}
+if string.find(method,'Ray') then
+if target then
+    if args[1].Name ~= "Workspace" then
+            print(args[1])
+        else
+    args[2] = Ray.new(workspace.CurrentCamera.CFrame.Position, (target.Position + Vector3.new(0,(workspace.CurrentCamera.CFrame.Position-target.Position).Magnitude/500,0) - workspace.CurrentCamera.CFrame.Position).unit * 5000)
+    end;
+end
+end
+return oldNamecall(unpack(args))
+end)
+ 
+warn("Script loaded!\nTime taken: "..math.abs(tonumber(tick())-st))
+ 
+RunService:BindToRenderStep("SilentAim",1,function()
+if UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) and Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Humanoid") and Players.LocalPlayer.Character.Humanoid.Health > 0 then
+target = getnearest()
+end
+end)
+    end    
+})
