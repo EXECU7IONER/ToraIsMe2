@@ -1,0 +1,7 @@
+for _,v in pairs(workspace["World Currencies"]:GetDescendants()) do
+if v.Name == "inner" and v and v:FindFirstChild("Attachment").Rays_Thin then
+game:GetService("ReplicatedStorage").Knit.Services.WorldCurrencyService.RE.PickupCurrency:FireServer(table.unpack({
+         [1] = v.Parent.Name,
+      }))
+    end
+end
