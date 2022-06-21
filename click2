@@ -1,1 +1,6 @@
+Infinity Boosts :
+loadstring(game:HttpGet('https://pastebin.com/raw/fkY2Nby2'))()
+
+
+AutoFarm GUI :
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LaDamage/releases/main/Clicker-Simulator.lua"))()
