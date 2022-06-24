@@ -1,6 +1,6 @@
 Remote Spy :
 
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/spy"))()
+loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
 
 
 
