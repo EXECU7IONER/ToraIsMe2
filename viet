@@ -1,0 +1,19 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Viet Piece", "DarkTheme")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Get Legendary Fruit")
+Section:NewButton("Click", "ButtonInfo", function()
+
+local args = {
+    [1] = "Legendary"
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.SpinGui.LOL.Spin.Spin.Reward:FireServer(unpack(args))
+
+end)
+local Section = Tab:NewSection("Infinite Levels and Money")
+Section:NewButton("Click", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace:FindFirstChild("AdminPart"):FindFirstChild("Chest Test"):FindFirstChild("Union").CFrame
+
+end)
