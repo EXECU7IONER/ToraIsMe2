@@ -1,0 +1,2 @@
+game:GetService("ReplicatedStorage").ServerAndClientDataCommunication.PlayFrootyAnimation:InvokeServer("Fruit Name",game:GetService("Players").LocalPlayer.PlayerGui.HUD.Gacha.Spinning)
+--Invisible, Spin, Chop, Love, Barrier, Bomb, Smoke, Flame, Poison, Ice, Magma, Gravity, Paw, Buddha, Thunder, Ghost
