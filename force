@@ -1,0 +1,67 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("FORCE [PRE-ALPHA]", "BloodTheme")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Teleport To Trinkets")
+Section:NewButton("Click", ".", function()
+    for _,v in pairs(workspace:GetDescendants()) do
+    if v:IsA("StringValue") and v.Name == "Rarity" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame*CFrame.new(0, 1, 0)
+    end
+end
+end)
+local Section = Tab:NewSection("Sell Trinkets")
+Section:NewButton("Click", ".", function()
+    --[[sell flowers
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(92.4719238, 1775.25439, 794.307129, 0.309441596, 1.21149185e-07, -0.950918436, -1.43326124e-08, 1, 1.22738271e-07, 0.950918436, -2.43511806e-08, 0.309441596)
+--]]
+
+function sell()
+    --tpes you to the merchant and sells everything
+   
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(137.537384, 1758.25513, 654.549805, -0.01525662, 7.10505876e-10, -0.999883592, -2.68973341e-08, 1, 1.12099874e-09, 0.999883592, 2.69113052e-08, -0.01525662)
+    task.wait(0.5)
+
+    local vm = game:GetService("VirtualInputManager")
+    vm:SendKeyEvent(true, "E", false, game)
+
+    task.wait(0.5)
+
+    for _, v in pairs(
+        getconnections(
+            game.Players.LocalPlayer.PlayerGui.DIALOGUE.MainFrame.Dialogue1.AnswerButton.MouseButton1Click
+        )
+    ) do
+        v:Fire()
+        task.wait(0.5)
+        v:Fire()
+    end
+
+    for _, v in pairs(
+        getconnections(
+            game.Players.LocalPlayer.PlayerGui.DIALOGUE.MainFrame.DialogueEnd.CancelButton.MouseButton1Click
+        )
+    ) do
+    task.wait(0.5)
+        v:Fire()
+    end
+end
+
+sell()
+end)
+local Section = Tab:NewSection("No Fall Damage")
+Section:NewButton("Click", ".", function()
+    local old
+old =
+    hookmetamethod(
+    game,
+    "__namecall",
+    function(self, ...)
+        if getnamecallmethod() == "FireServer" and self.Name == "FallDamage" and not checkcaller() then
+            return
+        end
+
+        return old(self, ...)
+    end
+)
+end)
