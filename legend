@@ -1,0 +1,129 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("[Open Beta] Legend Piece", "BloodTheme")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Loop kill players")
+Section:NewButton("Click", "Have to be outside safe zone and above some level", function()
+    while wait() do
+   players = game:GetService("Players"):GetChildren()
+   for i,v in pairs(players) do
+       if v ~= game:GetService("Players").LocalPlayer then
+           local args = {
+               [1] = "TakeDamage",
+               [2] = {
+                   ["target"] = v.Character,
+                   ["damage"] = 1000000000
+               },
+               [3] = "QWEFN@R}ASDF!@}R|DSFMQ@FASF:LWQE"
+           }
+           game:GetService("ReplicatedStorage").Remotes.DamageRemoteEvent:FireServer(unpack(args))
+       end
+   end
+end
+end)
+local Section = Tab:NewSection("Godmode")
+Section:NewButton("Click", ".", function()
+    local args = {
+   [1] = "TakeDamage",
+   [2] = {
+       ["target"] = game:GetService("Players").LocalPlayer.Character,
+       ["damage"] = math.huge
+   },
+   [3] = "QWEFN@R}ASDF!@}R|DSFMQ@FASF:LWQE"
+}
+game:GetService("ReplicatedStorage").Remotes.DamageRemoteEvent:FireServer(unpack(args))
+end)
+local Section = Tab:NewSection("Loop kill enemies")
+Section:NewButton("Click", ".", function()
+    while wait() do
+   for i,v in pairs(game:GetService("Workspace").Monster:GetChildren()) do
+       local args = {
+           [1] = "TakeDamage",
+           [2] = {
+               ["target"] = v,
+               ["damage"] = 9e9
+           },
+           [3] = "QWEFN@R}ASDF!@}R|DSFMQ@FASF:LWQE"
+       }
+       game:GetService("ReplicatedStorage").Remotes.DamageRemoteEvent:FireServer(unpack(args))
+   end
+end
+end)
+local Tab = Window:NewTab("Give Devil Fruit")
+local Section = Tab:NewSection("Reset")
+Section:NewButton("Click", ".", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+local Section = Tab:NewSection("Fruit")
+Section:NewButton("Magma", "ButtonInfo", function()
+    local args = {
+  [1] = game.Players.LocalPlayer.Backpack.Combat,
+  [2] = "None",
+  [3] = "Magma" -- Change This, Light, Magma, Quake, Flame, Ice, Paw, Sand, Invisible
+}
+
+game:GetService("ReplicatedStorage").Remotes.Eat:FireServer(unpack(args))
+end)
+Section:NewButton("Light", "ButtonInfo", function()
+    local args = {
+  [1] = game.Players.LocalPlayer.Backpack.Combat,
+  [2] = "None",
+  [3] = "Light" -- Change This, Light, Magma, Quake, Flame, Ice, Paw, Sand, Invisible
+}
+
+game:GetService("ReplicatedStorage").Remotes.Eat:FireServer(unpack(args))
+end)
+Section:NewButton("Quake", "ButtonInfo", function()
+    local args = {
+  [1] = game.Players.LocalPlayer.Backpack.Combat,
+  [2] = "None",
+  [3] = "Quake" -- Change This, Light, Magma, Quake, Flame, Ice, Paw, Sand, Invisible
+}
+
+game:GetService("ReplicatedStorage").Remotes.Eat:FireServer(unpack(args))
+end)
+Section:NewButton("Flame", "ButtonInfo", function()
+    local args = {
+  [1] = game.Players.LocalPlayer.Backpack.Combat,
+  [2] = "None",
+  [3] = "Flame" -- Change This, Light, Magma, Quake, Flame, Ice, Paw, Sand, Invisible
+}
+
+game:GetService("ReplicatedStorage").Remotes.Eat:FireServer(unpack(args))
+end)
+Section:NewButton("Ice", "ButtonInfo", function()
+    local args = {
+  [1] = game.Players.LocalPlayer.Backpack.Combat,
+  [2] = "None",
+  [3] = "Ice" -- Change This, Light, Magma, Quake, Flame, Ice, Paw, Sand, Invisible
+}
+
+game:GetService("ReplicatedStorage").Remotes.Eat:FireServer(unpack(args))
+end)
+Section:NewButton("Paw", "ButtonInfo", function()
+    local args = {
+  [1] = game.Players.LocalPlayer.Backpack.Combat,
+  [2] = "None",
+  [3] = "Paw" -- Change This, Light, Magma, Quake, Flame, Ice, Paw, Sand, Invisible
+}
+
+game:GetService("ReplicatedStorage").Remotes.Eat:FireServer(unpack(args))
+end)
+Section:NewButton("Sand", "ButtonInfo", function()
+    local args = {
+  [1] = game.Players.LocalPlayer.Backpack.Combat,
+  [2] = "None",
+  [3] = "Sand" -- Change This, Light, Magma, Quake, Flame, Ice, Paw, Sand, Invisible
+}
+
+game:GetService("ReplicatedStorage").Remotes.Eat:FireServer(unpack(args))
+end)
+Section:NewButton("Invisible", "ButtonInfo", function()
+    local args = {
+  [1] = game.Players.LocalPlayer.Backpack.Combat,
+  [2] = "None",
+  [3] = "Invisible" -- Change This, Light, Magma, Quake, Flame, Ice, Paw, Sand, Invisible
+}
+
+game:GetService("ReplicatedStorage").Remotes.Eat:FireServer(unpack(args))
+end)
