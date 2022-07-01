@@ -49,6 +49,11 @@ Section:NewButton("Click", ".", function()
    end
 end
 end)
+Section:NewButton("Rejoin", "ButtonInfo", function()
+    local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+
+module:Teleport(game.PlaceId)
+end)
 local Tab = Window:NewTab("Give Devil Fruit")
 local Section = Tab:NewSection("Reset")
 Section:NewButton("Click", ".", function()
