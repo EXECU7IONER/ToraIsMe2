@@ -1,0 +1,6 @@
+Script : 
+getgenv().key = "KEY" -- put your key here, key is free and can be found here on each update or whatever
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ghost-home/public/main/grandpiece.lua', true))()
+
+Key : Join Discord
+https://discord.com/invite/kywNxcQuTD
