@@ -1,0 +1,4 @@
+while true do
+	game.ReplicatedStorage.addXP:FireServer(5000)
+	wait(0.1)
+end
