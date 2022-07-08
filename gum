@@ -1,0 +1,27 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Gumball Factory Tycoon", "BloodTheme")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Farm")
+Section:NewButton("Click", ".", function()
+    setsimulationradius(1000,1000)
+_G.test = true
+while _G.test do
+    wait()
+for i,v in pairs(game.Workspace.Tycoons[game.Players.LocalPlayer.Team.Name].Gumballs:GetChildren()) do
+    if v.Name == "Gumball" and isnetworkowner(v) then
+        v.CFrame = Game.Workspace.Tycoons[game.Players.LocalPlayer.Team.Name].Interact.Guminator.Converter.CFrame
+    end
+end
+end
+end)
+local Section = Tab:NewSection("Win All Obby")
+Section:NewButton("Click", ".", function()
+    for i,v in pairs(game.Workspace.Obbies:GetChildren()) do
+   if v:FindFirstChild("Win") then
+       wait(2)
+       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v.Win,0)
+       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v.Win,1)
+   end
+end
+end)
