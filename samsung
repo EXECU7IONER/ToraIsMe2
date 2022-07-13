@@ -1,0 +1,5 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local TestRemotes = ReplicatedStorage:WaitForChild("Tests")
+local MoneyEvent = TestRemotes:WaitForChild("GiveMoneyEvent")
+MoneyEvent:FireServer(999)
