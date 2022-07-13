@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ItsFacts/FactsHub/main/LiftingPowerSimulator",true))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ItsFacts/FactsHub/main/Loader",true))();
