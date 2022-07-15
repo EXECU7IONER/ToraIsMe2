@@ -1,5 +1,33 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
+while wait() do
+local WingTable = {
+["GoldCost"] = math.pow(-9999999999999999999999999999999999,9),
+["BadgeID"] = 2127224809,
+["Title"] = "Shoulder-Mounted Wing",
+}
+game:GetService("ReplicatedStorage").Shop.Remotes.Cosmetics.PurchaseCosmeticsRequest:FireServer(WingTable)
 
-local TestRemotes = ReplicatedStorage:WaitForChild("Tests")
-local MoneyEvent = TestRemotes:WaitForChild("GiveMoneyEvent")
-MoneyEvent:FireServer(999)
+local HatTable = {
+["GoldCost"] = math.pow(-9999999999999999999999999999999999,9),
+["BadgeID"] = 2127224823,
+["Title"] = "Lemonade Hat",
+}
+
+game:GetService("ReplicatedStorage").Shop.Remotes.Cosmetics.PurchaseCosmeticsRequest:FireServer(HatTable)
+
+local ParrotTable = {
+["GoldCost"] = math.pow(-9999999999999999999999999999999999,9),
+["BadgeID"] = 2127224806,
+["Title"] = "Alien Parrot",
+}
+
+game:GetService("ReplicatedStorage").Shop.Remotes.Cosmetics.PurchaseCosmeticsRequest:FireServer(ParrotTable)
+
+local HeadsetTable = {
+["GoldCost"] = math.pow(-9999999999999999999999999999999999,9),
+["BadgeID"] = 2127234743,
+["Title"] = "Sparky Headset",
+}
+
+game:GetService("ReplicatedStorage").Shop.Remotes.Cosmetics.PurchaseCosmeticsRequest:FireServer(HeadsetTable)
+game:GetService("ReplicatedStorage").Badges.Events.AwardBadgeRemote:FireServer(2127234749)
+end
