@@ -1,13 +1,31 @@
-local table = {2127224806,
-2127224809,
-2127224823,
-2127234743,
-2127234749}
-for i,v in pairs(table) do
-   wait()
-   local args = {
-   [1] = v
+local WingTable = {
+["GoldCost"] = 0,
+["BadgeID"] = 2127224809,
+["Title"] = "Shoulder-Mounted Wing",
+}
+game:GetService("ReplicatedStorage").Shop.Remotes.Cosmetics.PurchaseCosmeticsRequest:FireServer(WingTable)
+
+local HatTable = {
+["GoldCost"] = 0,
+["BadgeID"] = 2127224823,
+["Title"] = "Lemonade Hat",
 }
 
-game:GetService("ReplicatedStorage").Badges.Events.AwardBadgeRemote:FireServer(unpack(args))
-end
+game:GetService("ReplicatedStorage").Shop.Remotes.Cosmetics.PurchaseCosmeticsRequest:FireServer(HatTable)
+
+local ParrotTable = {
+["GoldCost"] = 0,
+["BadgeID"] = 2127224806,
+["Title"] = "Alien Parrot",
+}
+
+game:GetService("ReplicatedStorage").Shop.Remotes.Cosmetics.PurchaseCosmeticsRequest:FireServer(ParrotTable)
+
+local HeadsetTable = {
+["GoldCost"] = 0,
+["BadgeID"] = 2127234743,
+["Title"] = "Sparky Headset",
+}
+
+game:GetService("ReplicatedStorage").Shop.Remotes.Cosmetics.PurchaseCosmeticsRequest:FireServer(HeadsetTable)
+game:GetService("ReplicatedStorage").Badges.Events.AwardBadgeRemote:FireServer(2127234749)
