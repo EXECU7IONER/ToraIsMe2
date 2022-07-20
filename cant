@@ -1,0 +1,21 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("TITLE", "BloodTheme")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Anti Cant Say")
+Section:NewButton("Click", ".", function()
+    while wait() do
+for i,v in next, game:GetService("Players").LocalPlayer.PlayerGui:GetChildren() do
+if v.Name == 'LocalScript' then
+v:Remove()
+end
+end
+end
+end)
+local Section = Tab:NewSection("Get All Tools")
+Section:NewButton("Click", ".", function()
+    for i,v in next, game:GetService("Players").LocalPlayer.PlayerGui.Main:GetDescendants() do
+if v.Name == 'RemoteEvent1' then
+v:FireServer()
+end
+end
+end)
