@@ -1,0 +1,6 @@
+for i,v in pairs(game.workspace.Tower.ScavengerHunt:GetDescendants()) do
+   if v.name == "HelmetModel" then
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Position)
+   wait(0.3)
+   end
+end
