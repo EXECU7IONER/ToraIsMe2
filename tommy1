@@ -1,0 +1,6 @@
+for i,v in pairs(game.workspace.Tokens.Active:GetDescendants()) do
+   if v:FindFirstChild("PointLight") then
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Position)
+   wait(0.1)
+   end
+end
