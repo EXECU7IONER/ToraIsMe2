@@ -1,0 +1,26 @@
+shared.WaterBottle = true
+local playerHead = game.Players.LocalPlayer.Character.Head
+local workspace = workspace
+local function FTI(z)
+firetouchinterest(playerHead, z, 0)
+task.wait(0.001)
+firetouchinterest(playerHead, z, 1)
+end
+function getWater()
+if shared.WaterBottle then
+local zoneDrops = workspace.Zones.Summer.Drops
+zoneDrops.DescendantAdded:Connect(function(instance)
+if instance.Name == 'TouchInterest' then
+pcall(FTI(instance.Parent))
+end
+end)
+repeat
+for _, Drop in pairs(zoneDrops:GetDescendants()) do
+if tostring(Drop) =="TouchInterest" then
+pcall(FTI(Drop.Parent))
+end
+end
+task.wait() until not shared.WaterBottle
+end
+end
+task.spawn(getWater)
