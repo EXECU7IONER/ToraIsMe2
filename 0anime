@@ -1,0 +1,5 @@
+while _G.AutoFarm do wait()
+    pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3321.84497, 205.451645, 594.837036, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    end)
+end
